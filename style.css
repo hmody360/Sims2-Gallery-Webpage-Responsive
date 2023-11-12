@@ -1,54 +1,81 @@
-*{
+* {
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
 }
-body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgb(250, 250, 250);
+
+:root {
+    --main-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --filterlabels-statnumber-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --main-text-color: rgb(250, 250, 250);
+    --core-containers-color: rgb(49, 93, 171);
+    --light-green-bg-color: rgb(102, 187, 70);
+    --gallery-container-bg-color: rgb(41, 158, 217);
+    --stats-holder-bg-color: rgb(77, 141, 54);
+    --social-links-bg-color: rgba(250, 250, 250, 0.2);
+    --padding-margin-border-radius: 10px;
+    --main-font-size: 16px;
+    --full-width-height: 100%;
+    --intropane-box-shadow:rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    --gallery-container-box-shadow:rgba(0, 0, 0, 0.5) 0px 5px 10px 0px inset;
+}
+
+.body {
+    font-family: var(--main-font-family);
+    color:  var(--main-text-color);
     line-height: 1.5;
 }
-nav {
-    background: rgb(49,93,171);
+
+.nav {
+    background:  var(--core-containers-color);
     height: 85px;
-    width: 100%;
+    width: var(--full-width-height);
 }
+
 .logo {
     width: 140px;
     height: 80px;
-    padding: 0px 10px;
+    padding: 0px var(--padding-margin-border-radius);
 }
-nav ul {
+
+.nav ul {
     float: right;
     margin-right: 20px;
-    
+
 }
-nav ul li {
+
+.nav ul li {
     display: inline-block;
     line-height: 80px;
     margin: 0px 5px;
 }
-nav ul li a {
-    color: rgb(250, 250, 250);
+
+.nav ul li a {
+    color:  var(--main-text-color);
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 30px;
     text-transform: capitalize;
 }
+
 a.active-page {
-    background: rgb(102,187,70);
+    background: rgb(102, 187, 70);
     transition: 0.5s;
     pointer-events: none;
 }
-nav ul li a:hover,#buynow-btn:hover {
-    background: rgb(102,187,70);
+
+.nav ul li a:hover,
+#buynow-btn:hover {
+    background: rgb(102, 187, 70);
     transition: 0.5s;
 }
+
 #buynow-btn {
-    background: rgb(41,158,217);
+    background: rgb(41, 158, 217);
 }
+
 .check-btn {
     font-size: 30px;
     color: white;
@@ -58,19 +85,22 @@ nav ul li a:hover,#buynow-btn:hover {
     cursor: pointer;
     display: none;
 }
+
 #check {
     display: none;
 }
-section {
-    background: url(./sims2Background.jpg);
+
+.main {
+    background: url(images/sims2Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
+    width: var(--full-width-height);
     height: calc(100vh+1px);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .intropane {
     width: 700px;
     height: 300px;
@@ -79,30 +109,36 @@ section {
     justify-content: flex-start;
     align-items: center;
     margin: 20px 20px 0px 20px;
-    padding: 10px;
-    background: rgb(49,93,171);
+    padding: var(--padding-margin-border-radius);
+    background:  var(--core-containers-color);
     border-radius: 20px 20px 0px 0px;
+    box-shadow: var(--intropane-box-shadow);
 
 }
+
 .intropane-desc {
     height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    
+
 }
+
 .gallery-container {
-    background-color:rgb(41,158,217);
+    background-color: rgb(41, 158, 217);
     width: 930px;
     height: fit-content;
     padding: 20px 5px 0px 5px;
+    margin-bottom: 1px;
     border-radius: 20px 20px 0px 0px;
+    box-shadow: var(--gallery-container-box-shadow);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
+
 .filter {
     width: 90%;
     height: 30px;
@@ -111,16 +147,18 @@ section {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: var(--padding-margin-border-radius);
 }
+
 .selector {
-    width:fit-content;
+    width: fit-content;
     height: fit-content;
     padding: 2px;
     display: flex;
     flex-direction: row;
     margin-right: 15px;
 }
+
 #searchType-icon {
     color: black;
     background: rgb(230, 230, 230);
@@ -129,18 +167,21 @@ section {
     border-radius: 5px 0px 0px 5px;
 
 }
+
 #searchType-text {
     width: 100px;
     border: none;
     border-left: 1px solid rgb(220, 220, 220);
     border-radius: 0px 5px 5px 0px;
 }
+
 .filter-label {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
+    font-family:  var(--filterlabels-statnumber-font-family);;
+    font-size: var(--main-font-size);
     font-weight: 400;
     margin-right: 15px;
 }
+
 .selector-btn {
     width: 100px;
     margin: 0px;
@@ -148,26 +189,30 @@ section {
     border-right: 1px solid rgb(220, 220, 220);
     border-radius: 5px 0px 0px 5px;
 }
+
 .selector-btn:focus {
     border: 2px solid black;
     transition: border 0.1s ease-in-out;
 }
+
 #selector-icon {
-    color:black;
+    color: black;
     background: rgb(230, 230, 230);
     padding: 3px;
     border-radius: 0px 5px 5px 0px;
 }
+
 #search-btn {
     width: 80px;
     height: 30px;
     color: white;
     font-weight: 600;
-    background-color: rgb(102,187,70);
-    border-radius: 10px;
-    border-color: rgb(41,158,217);
+    background-color: rgb(102, 187, 70);
+    border-radius: var(--padding-margin-border-radius);
+    border-color: rgb(41, 158, 217);
 
 }
+
 .build-container {
     display: flex;
     flex-direction: row;
@@ -175,55 +220,63 @@ section {
     justify-content: space-between;
     align-items: flex-start;
 
-    background-color: rgb(49,93,171);
+    background-color:  var(--core-containers-color);
     width: 900px;
-    height: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    height: var(--full-width-height);
+    padding: var(--padding-margin-border-radius);
+    margin-bottom: var(--padding-margin-border-radius);
     border-radius: 20px;
 }
+
 .build {
     display: grid;
     grid-template-columns: 260px;
-    background-color: rgb(102,187,70);
+    background-color: rgb(102, 187, 70);
     width: 260px;
     height: 235px;
-    margin-bottom: 10px;
+    margin-bottom: var(--padding-margin-border-radius);
     border-radius: 20px;
 
 }
+
 .build-img {
     background-color: white;
     width: 170px;
     height: 120px;
-    margin: 10px;
-    border-radius: 10px;
+    margin: var(--padding-margin-border-radius);
+    border-radius: var(--padding-margin-border-radius);
     justify-self: center;
 }
+
 .player-tag {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 .player-img {
     width: 40px;
     height: 40px;
-    margin: 0px 10px 10px 10px;
+    margin: 0px var(--padding-margin-border-radius) var(--padding-margin-border-radius) var(--padding-margin-border-radius);
     border-radius: 25px;
 }
+
 .build-text-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 .build-text-container h5 {
     font-size: small;
 }
+
 .build-text-container h6 {
     font-size: xx-small;
 }
+
 .build-stats-container {
     background-color: rgb(77, 141, 54);
     width: 260px;
@@ -235,180 +288,216 @@ section {
     justify-content: center;
     align-items: center;
 }
+
 .favourite {
     width: 25px;
     height: 25px;
 }
+
 .favourite:hover {
-    content: url(whiteHeartFilled.png);
+    content: url(images/whiteHeartFilled.png);
 }
+
 .download {
     width: 25px;
     height: 25px;
 }
+
 .download:hover {
-    content: url(downloadWhiteFilled.png);
+    content: url(images/downloadWhiteFilled.png);
 }
+
 .flag {
     width: 25px;
     height: 25px;
     justify-self: flex-end;
-    margin: 0px 0px 0px 110px;
+    margin: 0px 0px 0px 110px
 }
+
 .flag:hover {
-    content: url(flagFilled.png);
+    content: url(images/flagFilled.png);
 }
+
 .stat-number {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:  var(--filterlabels-statnumber-font-family);;
     font-weight: 600;
     text-align: left;
     width: 20px;
     margin: 0px 5px 0px 5px;
 }
-footer {
-    background: rgb(102,187,70);
+
+.footer {
+    background: rgb(102, 187, 70);
     padding: 70x 0px;
 }
+
 .footer-container {
     max-width: 1170px;
     padding: 20px;
     margin: auto;
 }
+
 .footer-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
+
 .footer-col {
     width: 25%;
     padding: 0 15px;
 }
+
 .footer-col ul {
     list-style: none;
 }
+
 .footer-col h4 {
     font-size: 18px;
-    color: rgb(250, 250, 250);
+    color:  var(--main-text-color);
     text-transform: capitalize;
     margin-bottom: 30px;
     font-weight: 500;
     position: relative;
 }
+
 .footer-col h4::before {
     content: '';
     position: absolute;
     left: 0;
     bottom: -10px;
-    background-color: rgb(49,93,171);
+    background-color:  var(--core-containers-color);
     height: 2px;
     box-sizing: border-box;
     width: 100px;
 }
+
 .footer-col ul li {
-    margin-bottom: 10px;
+    margin-bottom: var(--padding-margin-border-radius);
 }
+
 .footer-col ul li a {
-    font-size: 16px;
+    font-size: var(--main-font-size);
     text-transform: capitalize;
-    color: rgb(250, 250, 250);
+    color:  var(--main-text-color);
     text-decoration: none;
     font-weight: 300;
     display: block;
     transition: all 0.3s ease;
 }
+
 .footer-col ul li a:hover {
-    color: rgb(49,93,171);
+    color:  var(--core-containers-color);
     padding-left: 8px;
 }
+
 .footer-col .social-links a {
     display: inline-block;
     width: 40px;
     height: 40px;
-    background-color: rgba(250, 250, 250 ,0.2);
-    margin: 0px 10px 10px 0px;
+    background-color: rgba(250, 250, 250, 0.2);
+    margin: 0px var(--padding-margin-border-radius) var(--padding-margin-border-radius) 0px;
     text-align: center;
     line-height: 40px;
     border-radius: 50px;
-    color: rgb(250, 250, 250);
+    color:  var(--main-text-color);
     transition: all 0.5s ease;
 }
+
 .footer-col .social-links a:hover {
-    color: rgb(49,93,171);
+    color:  var(--core-containers-color);
     width: 45px;
     height: 45px;
     text-align: center;
     line-height: 45px;
-    background-color: rgb(250, 250, 250);
+    background-color:  var(--main-text-color);
 }
 
-@media (max-width: 945px){
+@media (max-width: 945px) {
     .logo {
         width: 130px;
         height: 75px;
         /* padding-left: 50px; */
     }
-    nav ul li a {
-        font-size: 16px;
+
+    .nav ul li a {
+        font-size: var(--main-font-size);
     }
+
     .gallery-container {
         width: 890px;
     }
+
     .build-container {
         margin-top: 25px;
         width: 850px;
     }
 }
+
 @media (max-width: 890px) {
     .check-btn {
         display: block;
     }
-    nav ul {
+
+    .nav ul {
         position: fixed;
-        width: 100%;
+        width: var(--full-width-height);
         height: 100vh;
-        background: rgb(41,158,217);
+        background: rgb(41, 158, 217);
         top: 80px;
         left: -100%;
         text-align: center;
         transition: all 0.5s;
 
     }
-    nav ul li {
+
+    .nav ul li {
         display: block;
         margin: 20px 0px;
         line-height: 30px;
     }
-    nav ul li a {
+
+    .nav ul li a {
         font-size: 20px;
     }
-    #check:checked ~ ul {
+
+    #check:checked~ul {
         left: 0;
     }
+
     #buynow-btn {
-        background: rgb(49,93,171);
+        background:  var(--core-containers-color);
     }
-    a:hover,#buynow-btn:hover {
-        background: rgb(102,187,70);
+
+    a:hover,
+    #buynow-btn:hover {
+        background: rgb(102, 187, 70);
         transition: 0.5s;
     }
+
     #bodyshop-logo {
         width: 200px;
         height: 200px;
     }
+
     .intropane {
         width: 480px;
         height: 350px;
         flex-direction: column;
     }
+
     .gallery-container {
         width: 580px;
     }
+
     .build-container {
         width: 560px;
     }
+
     .filter {
         justify-content: baseline;
     }
+
     .footer-col {
         width: 50%;
         margin-bottom: 30px;
@@ -419,30 +508,36 @@ footer {
     .intropane {
         width: 340px;
     }
+
     .gallery-container {
         width: 380px;
     }
+
     .build-container {
         justify-content: center;
         margin-top: 80px;
         width: 340px;
     }
-    .footer-col {
-        width: 100%;
-    }
 
 }
+
 @media (max-width: 380px) {
     .intropane {
-        width: 100%;
+        width: var(--full-width-height);
         height: 350px;
     }
+
     .gallery-container {
-        width: 100%;
+        width: var(--full-width-height);
         border-radius: 0px;
     }
+
     .build-container {
         margin-top: 100px;
         width: 280px;
+    }
+
+    .footer-col {
+        width: var(--full-width-height);
     }
 }
